@@ -1,0 +1,17 @@
+<!-- <li>
+    <mat-form-field>
+      <input matInput  placeholder="What's your name?">
+    </mat-form-field>
+  </li> -->
+<!-- 
+  <h2>your Request has been approved </h2><br>
+  <h2>Return date 29-03-2021</h2> -->
+
+  <tr *ngIf="data">
+   <b>{{data.name}}</b> <br>
+   <div mat-dialog-actions>
+    <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+  </div>
+  
+
+  

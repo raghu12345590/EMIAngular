@@ -1,0 +1,139 @@
+
+        <mat-sidenav-container>
+          <mat-sidenav  #sidenav role="navigation">
+           <mat-nav-list>
+          
+            <a mat-list-item>
+              <mat-icon class="icon">home</mat-icon>
+                <span class="label">Home</span>
+            </a>
+            
+            <a  mat-list-item type="button">
+              <mat-icon class="icon">input</mat-icon>
+              <span class="label">LogOut</span>
+            </a>
+            </mat-nav-list>
+          </mat-sidenav>
+          <mat-sidenav-content>
+            <mat-toolbar color="secondry">
+             <div fxHide.gt-xs>
+               <button mat-icon-button (click)="sidenav.toggle()">
+                <mat-icon>menu</mat-icon>
+              </button>
+            </div>
+             <div class="logo">
+               <img src="assets/images/emi-logo.jpg">
+             </div>
+             
+             <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+                <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+                   
+                    <!-- <li>
+                    <div class='col-md-4'>
+                      <input type='text'
+                             [(ngModel)]='listFilter'/>
+                  </div>
+                </li> -->
+                <li routerLinkActive="admin">
+                    <a class="nav-link" routerLink="/admin">
+                    
+                      
+                      <span class="label">Home</span>
+                     </a>
+                </li>
+                    
+                    <li routerLinkActive="active">
+                        <a class="nav-link" routerLink="/">
+                        
+                          
+                          <span class="label">LogOut</span>
+                         </a>
+                    </li>
+                </ul>
+             </div>
+            </mat-toolbar>
+            <main>
+            </main>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+
+
+    <mat-card >
+        <form [formGroup]="empForm" (ngSubmit)="onFormSubmit(empForm.value)">
+            <h2>Add Your Book</h2>
+            <mat-form-field>
+                <input matInput placeholder="Enter Book Id" formControlName="id">
+               
+                <mat-error>
+                    <span *ngIf="!empForm.get('id')?.valid && empForm.get('id')?.touched">Book id Required</span>
+                </mat-error>
+            </mat-form-field>
+
+            <mat-form-field>
+                <input matInput placeholder="Enter Book Name" formControlName="BookName">
+               
+                <mat-error>
+                    <span *ngIf="!empForm.get('BookName')?.valid && empForm.get('BookName')?.touched">Name Required</span>
+                </mat-error>
+            </mat-form-field>
+
+          
+            <mat-form-field>
+                <input matInput placeholder="Enter Author Name" formControlName="Author">
+            
+                <mat-error>
+                    <span *ngIf="!empForm.get('Author')?.valid && empForm.get('Author')?.touched">Department Required</span>
+                </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput type="date"  formControlName="Date">
+                <mat-error>
+                    <span *ngIf="!empForm.get('Date')?.valid && empForm.get('Date')?.touched">Department Required</span>
+                </mat-error>
+              </mat-form-field>
+          
+
+            
+            <div class="button-row">
+                <button mat-flat-button color="primary" type="submit" [disabled]="!empForm.valid"><mat-icon>save</mat-icon></button>
+            </div>
+        </form>
+    </mat-card>
+    
+
+
+<!--     
+<h1 mat-dialog-title>{{data}}</h1>
+<div mat-dialog-content>
+  <form [formGroup]="empForm" (ngSubmit)="onFormSubmit(empForm.value)">
+    <mat-form-field>
+        <input matInput placeholder="Enter Book Id" formControlName="id">
+       
+        <mat-error>
+            <span *ngIf="!empForm.get('id')?.valid && empForm.get('id')?.touched">Book id Required</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput placeholder="Enter Book Name" formControlName="BookName">
+       
+        <mat-error>
+            <span *ngIf="!empForm.get('BookName')?.valid && empForm.get('BookName')?.touched">Name Required</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput  formControlName="Author">
+    
+        <mat-error>
+            <span *ngIf="!empForm.get('Author')?.valid && empForm.get('Author')?.touched">Department Required</span>
+        </mat-error>
+    </mat-form-field>
+    <mat-form-field>
+        <input matInput type="date"  formControlName="Date">
+      </mat-form-field>
+    </mat-form-field>
+    <button mat-raised-button type="submit" color="primary">Save</button>
+  </form>
+</div>
+<div mat-dialog-actions>
+  <button mat-raised-button class="close" (click)="onNoClick()" color="warn">Cancel</button>
+</div> -->

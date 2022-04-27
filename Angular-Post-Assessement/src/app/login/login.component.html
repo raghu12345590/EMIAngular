@@ -1,0 +1,55 @@
+<body>
+    <mat-card>
+    
+        <mat-card-content>
+          <form #myForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit(myForm)">
+            <div class="header">
+                <img src="https://www.innovact.gr/wp-content/uploads/2018/08/euromonitor-podcasts-euromonitor-qFpe52QDOBH-TtUCLe2P5OE.1400x1400.jpg" alt="logo" />
+                <h3>Online Library </h3>
+              </div>
+            
+            <mat-form-field>
+              <input matInput type="userName"  name="userName" class="form-control margin-b" id="floatingInput" placeholder="Emai address" required="" ngModel>
+              <mat-error>
+                Please provide a valid email address
+              </mat-error>
+            </mat-form-field>
+            <mat-form-field>
+              <input matInput type="password" value="krishna" name="password" class="form-control margin-b" id="floatingPassword" placeholder="*********" required="" ngModel>
+              <mat-error>
+                Please provide a valid password
+              </mat-error>
+            </mat-form-field>
+            <button mat-raised-button color="primary" type="submit">Login</button>
+          </form>
+        </mat-card-content>
+      </mat-card>
+    </body>
+
+    <!-- <div class="main-bg" style="height: 745px;">
+      <div class="login-container text-c animated flipInX ">
+         
+          <div class="container-content">
+              <div>
+                  <img  src="../../../assets/EuromonitorLogoCircular.jpg" alt="" style=" height:66px; width: 70px; border-radius: 50%;">
+              </div>
+                  <h3 class="text-whitesmoke">Welcome To Euromonitor</h3>
+                  <p class="text-whitesmoke">Sign In</p>
+                  <form  class="margin-t" #myForm="ngForm" autocomplete="off" (ngSubmit)="onSubmit(myForm)" >
+                  <div class="form-group">
+                      <input style="border-radius: 50px;" type="userName"  name="userName" class="form-control margin-b" id="floatingInput" placeholder="Emai address" required="" ngModel>
+                  </div>
+                  <div class="form-group">
+                      <input  style="border-radius:50px;" type="password" value="krishna" name="password" class="form-control margin-b" id="floatingPassword" placeholder="*********" required="" ngModel>
+  
+                  </div>
+                  <button style="border-radius:50px;" type="submit" class="form-button button-l margin-b">Sign In</button>
+  
+                  <a class="text-darkyellow" href="#"><small>Forgot your password?</small></a>
+                  <p class="text-whitesmoke text-center"><small>Do not have an account?</small></p>
+                  <a class="text-darkyellow" href="#"><small>Sign Up</small></a>
+              </form>
+          </div>
+  
+  </div>
+    </div> -->

@@ -1,0 +1,135 @@
+<body>
+  
+  <mat-sidenav-container>
+    <mat-sidenav  #sidenav role="navigation">
+     <mat-nav-list>
+      <!-- <a mat-list-item>
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">Login</span>
+      </a> -->
+      <a mat-list-item>
+        <mat-icon class="icon">home</mat-icon>
+          <span class="label">Home</span>
+      </a>
+      
+      <a  mat-list-item type="button">
+        <mat-icon class="icon">input</mat-icon>
+        <span class="label">LogOut</span>
+      </a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+      <mat-toolbar color="secondry">
+       <div fxHide.gt-xs>
+         <button mat-icon-button (click)="sidenav.toggle()">
+          <mat-icon>menu</mat-icon>
+        </button>
+      </div>
+       <div class="logo">
+         <img src="assets/images/emi-logo.jpg">
+       </div>
+       
+       <div fxFlex fxLayout fxLayoutAlign="flex-end"  fxHide.xs>
+          <ul fxLayout fxLayoutGap="20px" class="navigation-items">
+              <!-- <li>
+                  <a>
+                    <mat-icon class="icon">input</mat-icon>
+                    <span  class="label">Login</span>
+                   </a>
+              </li> -->
+              <li>
+              <div class='col-md-4'>
+                <input type='text'
+                       placeholder="search book"
+                       [(ngModel)]='listFilter'/>
+            </div>
+          </li>
+              
+              <li routerLinkActive="active">
+                  <a class="nav-link" routerLink="/">
+                  
+                    
+                    <span class="label">LogOut</span>
+                   </a>
+              </li>
+          </ul>
+       </div>
+      </mat-toolbar>
+      <main>
+      </main>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+
+
+<!-- 
+
+
+  
+    <tr *ngFor="let list of filteredBook">
+
+        
+<mat-card class="example-card" >
+        <tr *ngFor="let req of reqId">
+   
+    <mat-card-header>
+      <div class="example-header-image" > </div>
+      <mat-card-title>{{list.BookName}}</mat-card-title>
+      <mat-card-subtitle>{{list.Author}}</mat-card-subtitle>
+    </mat-card-header>
+    <img mat-card-image src="{{list.imageUrl}}" alt="Photo of a Shiba Inu">
+
+    <mat-card-content *ngIf='list.show'>{{list.Content}}</mat-card-content>
+   
+
+    <mat-card-actions>
+      
+      <button  mat-raised-button  (click)='toggleImage(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)'>{{list.show ? 'Hide' : 'Show'}}    Info</button>
+    
+      
+      <button *ngIf="list.change" mat-raised-button (click)='likes(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)' ><span class="material-icons" >favorite</span>&nbsp;&nbsp;{{list.Likes}}</button>
+      <button *ngIf="!list.change" mat-raised-button (click)='likes(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)' ><span class="material-icons">
+        favorite_border
+        </span>&nbsp;&nbsp;{{list.Likes}}</button>
+     
+      </mat-card-actions>
+  </mat-card><br>  -->
+
+
+ <div class="row">
+    <h1 style="text-align: center;">Welcome to Library</h1>
+    <tr *ngFor="let req of reqId"></tr>
+    <div class="col-md-4"  *ngFor="let list of filteredBook">
+      <div class="card-text-center" *ngFor="let req of reqId"><br><br><br>
+        <div class="card" id="parent">
+     
+          <div class="card-body">
+            <!-- <title>{{list.BookName}}</title> -->
+            <img mat-card-image src="{{list.imageUrl}}" alt="Angular material Card" height="250">&nbsp;
+            
+               <mat-card-actions>
+                <button  mat-raised-button  (click)='openDialog(req.totalBook,req.id,req.email)'> Book</button>
+      
+      <button  mat-raised-button  (click)='toggleImage(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)'>{{list.show ? 'Hide' : 'Show'}}    Info</button>
+    
+      
+      <button *ngIf="list.change" mat-raised-button (click)='likes(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)' ><span class="material-icons" >favorite</span>&nbsp;&nbsp;{{list.Likes}}</button>
+      <button *ngIf="!list.change" mat-raised-button (click)='likes(list.id,list.BookName,list.Author,list.Content,list.Date,
+      list.Likes,list.change,list.show,list.imageUrl,list.authorUrl)' ><span class="material-icons">
+        favorite_border
+        </span>&nbsp;&nbsp;{{list.Likes}}</button>
+     
+      </mat-card-actions>
+            <mat-card-content *ngIf='list.show'><b>{{list.Content}}</b></mat-card-content>&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+
+</body>
